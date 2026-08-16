@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Privacy Policy for the KuiqKolor Chrome extension." />
+  <meta name="theme-color" content="#080a10" />
+  <title>KuiqKolor — Privacy Policy</title>
+  <link rel="icon" type="image/png" href="assets/kuiqkolor-icon.png" />
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080a10;
+      --surface: #0d111b;
+      --surface-2: #111726;
+      --text: #f5f7fb;
+      --muted: #98a3b7;
+      --muted-2: #6f7b91;
+      --border: rgba(139, 92, 246, 0.18);
+      --border-cyan: rgba(53, 232, 255, 0.26);
+      --cyan: #35e8ff;
+      --purple: #8b5cf6;
+      --pink: #c56cff;
+      --max: 860px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(700px 360px at 90% -130px, rgba(139, 92, 246, 0.16), transparent 68%),
+        radial-gradient(620px 330px at -80px -120px, rgba(53, 232, 255, 0.09), transparent 68%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      padding: 54px 0 70px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.06),
+        0 10px 28px rgba(0,0,0,0.28);
+    }
+
+    .brand-name {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 850;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-sub {
+      margin-top: 2px;
+      color: var(--muted-2);
+      font-size: 12px;
+    }
+
+    .hero {
+      padding: 28px;
+      border: 1px solid var(--border-cyan);
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(53, 232, 255, 0.035), rgba(139, 92, 246, 0.045)),
+        rgba(13, 17, 27, 0.90);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.26);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 5vw, 42px);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .effective {
+      margin: 11px 0 0;
+      color: var(--muted-2);
+      font-size: 12px;
+    }
+
+    .intro {
+      max-width: 710px;
+      margin: 20px 0 0;
+      color: #cbd3e1;
+      font-size: 15px;
+    }
+
+    .privacy-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .badge {
+      padding: 7px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(17, 23, 38, 0.78);
+      color: #cbd3e1;
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .badge strong {
+      color: var(--cyan);
+      font-weight: 850;
+    }
+
+    .content {
+      margin-top: 18px;
+      padding: 6px 28px 8px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(13, 17, 27, 0.76);
+    }
+
+    section {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.055);
+    }
+
+    section:last-child {
+      border-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+    }
+
+    p {
+      margin: 0;
+      color: #bdc6d6;
+      font-size: 13.5px;
+    }
+
+    p + p {
+      margin-top: 10px;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+      color: #bdc6d6;
+      font-size: 13.5px;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    code {
+      padding: 2px 6px;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 5px;
+      background: var(--surface-2);
+      color: #dce4f0;
+      font-size: 0.92em;
+    }
+
+    .callout {
+      margin-top: 13px;
+      padding: 13px 14px;
+      border-left: 2px solid var(--cyan);
+      border-radius: 0 8px 8px 0;
+      background: rgba(53, 232, 255, 0.035);
+      color: #bfc9d9;
+      font-size: 12.5px;
+    }
+
+    footer {
+      padding-top: 22px;
+      color: var(--muted-2);
+      font-size: 11px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .shell {
+        width: min(calc(100% - 22px), var(--max));
+        padding-top: 30px;
+      }
+
+      .hero {
+        padding: 22px 18px;
+      }
+
+      .content {
+        padding: 4px 18px 6px;
+      }
+
+      section {
+        padding: 21px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="shell">
+    <div class="brand">
+      <img src="assets/kuiqkolor-icon.png" alt="KuiqKolor icon" />
+      <div>
+        <div class="brand-name">KuiqKolor</div>
+        <div class="brand-sub">Chrome Extension</div>
+      </div>
+    </div>
+
+    <header class="hero">
+      <h1>Privacy Policy</h1>
+      <p class="effective">Effective date: August 16, 2026</p>
+
+      <p class="intro">
+        KuiqKolor is a compact color and preset randomizer for Chrome. It is designed
+        to work locally in your browser, does not require an account, and does not
+        send your saved colors, palettes, or browsing activity to the developer.
+      </p>
+
+      <div class="privacy-badges" aria-label="Privacy summary">
+        <span class="badge"><strong>No</strong> tracking</span>
+        <span class="badge"><strong>No</strong> analytics</span>
+        <span class="badge"><strong>No</strong> advertising</span>
+        <span class="badge"><strong>No</strong> website access</span>
+        <span class="badge"><strong>Local</strong> storage only</span>
+      </div>
+    </header>
+
+    <article class="content">
+      <section id="overview">
+        <h2>1. Overview</h2>
+        <p>
+          This Privacy Policy explains what information KuiqKolor stores, how that
+          information is used, and how the extension handles user data.
+        </p>
+      </section>
+
+      <section id="stored-data">
+        <h2>2. Data stored by KuiqKolor</h2>
+        <p>
+          KuiqKolor uses Chrome's extension storage to remember information needed
+          for its features. This may include:
+        </p>
+        <ul>
+          <li>The current five-color palette.</li>
+          <li>Color lock states.</li>
+          <li>Individually saved colors.</li>
+          <li>Saved five-color palettes, including palettes generated from presets.</li>
+          <li>The selected preset category.</li>
+          <li>Local preset-randomizer state used to avoid immediate preset repetition.</li>
+          <li>Basic interface state required to preserve your choices between popup sessions.</li>
+        </ul>
+        <div class="callout">
+          This information is stored using <code>chrome.storage.local</code> inside
+          the extension's local Chrome storage.
+        </div>
+      </section>
+
+      <section id="use">
+        <h2>3. How stored data is used</h2>
+        <p>
+          KuiqKolor uses locally stored information only to provide its color
+          generation, preset randomization, locking, favorite, and saved-palette
+          features and to preserve your choices between uses of the extension.
+        </p>
+      </section>
+
+      <section id="collection">
+        <h2>4. Data collection and transmission</h2>
+        <p>
+          KuiqKolor does not operate a developer-controlled server for user data.
+          The extension does not transmit your saved colors, saved palettes,
+          browsing activity, or extension state to the developer or to third parties.
+        </p>
+        <p>
+          KuiqKolor does not use analytics SDKs, telemetry services, advertising
+          networks, tracking pixels, or behavioral profiling.
+        </p>
+      </section>
+
+      <section id="sharing">
+        <h2>5. Data sharing and sale</h2>
+        <p>
+          KuiqKolor does not sell, rent, share, or transfer extension user data to
+          advertisers, data brokers, analytics providers, or other third parties.
+        </p>
+      </section>
+
+      <section id="browsing">
+        <h2>6. Website and browsing access</h2>
+        <p>
+          KuiqKolor does not request host permissions. It does not read, collect,
+          modify, or monitor the websites you visit, your browsing history, page
+          content, cookies, form data, or communications.
+        </p>
+      </section>
+
+      <section id="permissions">
+        <h2>7. Chrome permissions</h2>
+        <p>
+          KuiqKolor requests the Chrome <code>storage</code> permission. This
+          permission is used to persist the local app state, saved colors, and saved
+          palettes described in this policy. The extension does not request broader
+          website or browsing permissions.
+        </p>
+      </section>
+
+      <section id="retention">
+        <h2>8. Data retention and deletion</h2>
+        <p>
+          Locally saved data remains in Chrome's extension storage until it is
+          changed or removed through KuiqKolor, cleared through browser/extension
+          controls, or removed as part of Chrome's extension-data lifecycle.
+        </p>
+        <p>
+          Individual saved colors and palettes can be removed directly from
+          KuiqKolor's Saved interface.
+        </p>
+      </section>
+
+      <section id="security">
+        <h2>9. Security</h2>
+        <p>
+          Because KuiqKolor's saved extension data is not transmitted to a
+          developer-controlled server, there is no remote user-data database
+          operated by KuiqKolor. Data stored by the extension is subject to Chrome
+          and the user's device/browser security controls.
+        </p>
+      </section>
+
+      <section id="limited-use">
+        <h2>10. Chrome Web Store Limited Use</h2>
+        <p>
+          KuiqKolor's use of information is limited to providing and maintaining
+          the extension's single purpose: generating, exploring, copying, locking,
+          and locally saving colors and palettes. KuiqKolor does not use extension
+          data for advertising, profiling, unrelated market research, or other
+          unrelated purposes.
+        </p>
+      </section>
+
+      <section id="changes">
+        <h2>11. Changes to this policy</h2>
+        <p>
+          If KuiqKolor's data practices change in a future version, this policy will
+          be updated to accurately describe the new practices and the effective date
+          will be revised.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>12. Contact</h2>
+        <p>
+          For privacy questions about KuiqKolor, contact the developer using the
+          support contact provided on KuiqKolor's Chrome Web Store listing.
+        </p>
+      </section>
+    </article>
+
+    <footer>
+      KuiqKolor Privacy Policy · Last updated August 16, 2026
+    </footer>
+  </main>
+</body>
+</html>
