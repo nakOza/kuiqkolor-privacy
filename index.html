@@ -323,7 +323,7 @@
 
     <header class="hero">
       <h1>Privacy Policy</h1>
-      <p class="effective">Effective date: August 16, 2026</p>
+      <p class="effective">Effective date: August 18, 2026</p>
 
       <p class="intro">
         KuiqKolor is a compact color and preset randomizer for Chrome. It is designed
@@ -335,7 +335,7 @@
         <span class="badge"><strong>No</strong> tracking</span>
         <span class="badge"><strong>No</strong> analytics</span>
         <span class="badge"><strong>No</strong> advertising</span>
-        <span class="badge"><strong>No</strong> website access</span>
+        <span class="badge"><strong>User-initiated</strong> active-tab access</span>
         <span class="badge"><strong>Local</strong> storage only</span>
       </div>
     </header>
@@ -362,7 +362,8 @@
           <li>Saved five-color palettes, including palettes generated from presets.</li>
           <li>The selected preset category.</li>
           <li>Local preset-randomizer state used to avoid immediate preset repetition.</li>
-          <li>Basic interface state required to preserve your choices between popup sessions.</li>
+          <li>Basic interface state required to preserve your choices between panel sessions.</li>
+          <li>The floating panel's last expanded size and position.</li>
         </ul>
         <div class="callout">
           This information is stored using <code>chrome.storage.local</code> inside
@@ -403,19 +404,32 @@
       <section id="browsing">
         <h2>6. Website and browsing access</h2>
         <p>
-          KuiqKolor does not request host permissions. It does not read, collect,
-          modify, or monitor the websites you visit, your browsing history, page
-          content, cookies, form data, or communications.
+          KuiqKolor does not request persistent host permissions. When you explicitly
+          click the KuiqKolor toolbar icon, Chrome's <code>activeTab</code> permission
+          provides temporary access to that active webpage so KuiqKolor can insert,
+          display, resize, move, minimize, restore, or remove its floating interface.
+        </p>
+        <p>
+          KuiqKolor does not use this temporary access to read, collect, transmit, or
+          monitor webpage content, browsing history, cookies, form data, communications,
+          or other website data. Access is user-initiated and is limited by Chrome's
+          <code>activeTab</code> permission model.
         </p>
       </section>
 
       <section id="permissions">
         <h2>7. Chrome permissions</h2>
         <p>
-          KuiqKolor requests the Chrome <code>storage</code> permission. This
-          permission is used to persist the local app state, saved colors, and saved
-          palettes described in this policy. The extension does not request broader
-          website or browsing permissions.
+          KuiqKolor requests <code>storage</code>, <code>activeTab</code>, and
+          <code>scripting</code>. <code>storage</code> preserves the local app state,
+          saved colors, saved palettes, preset state, and floating-panel layout.
+          <code>activeTab</code> provides temporary access only after you invoke
+          KuiqKolor on the current webpage. <code>scripting</code> is used only to
+          inject or toggle KuiqKolor's packaged floating-panel code on that active page.
+        </p>
+        <p>
+          KuiqKolor does not request persistent <code>&lt;all_urls&gt;</code> host
+          permission and does not execute remotely hosted code.
         </p>
       </section>
 
