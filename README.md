@@ -4,22 +4,28 @@
 
 <p align="center">
   <strong>KuiqKolor Privacy & Support</strong><br>
-  Privacy-policy and support pages for KuiqKolor.
+  Official privacy-policy and support site for KuiqKolor.
 </p>
 
 ---
 
 <strong>About</strong>
 
-This repository hosts the public privacy and support pages used by KuiqKolor across its Chrome extension and mobile app.
+This repository hosts a single-page GitHub Pages site for KuiqKolor privacy and support information across the Chrome extension and mobile app.
+
+<strong>Site Sections</strong>
+
+- Chrome Privacy — `#chrome-privacy`
+- Mobile Privacy — `#mobile-privacy`
+- Mobile Support — `#support`
 
 <strong>Repository Files</strong>
 
 | File | Purpose |
 | --- | --- |
-| [`index.html`](./index.html) | Privacy Policy for the KuiqKolor Chrome extension |
-| [`mobile-privacy.html`](./mobile-privacy.html) | Privacy Policy for KuiqKolor Mobile |
-| [`support.html`](./support.html) | Support page for KuiqKolor Mobile |
+| [`index.html`](./index.html) | Main tabbed privacy and support site |
+| [`mobile-privacy.html`](./mobile-privacy.html) | Redirects legacy mobile privacy URL to `#mobile-privacy` |
+| [`support.html`](./support.html) | Redirects legacy support URL to `#support` |
 | [`kuiqkolor-icon.png`](./kuiqkolor-icon.png) | Official KuiqKolor icon |
 | `README.md` | Repository overview |
 
