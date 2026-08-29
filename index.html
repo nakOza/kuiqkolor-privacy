@@ -124,6 +124,7 @@
     .tabs::-webkit-scrollbar{display:none}
 
     .tab{
+      display:block;
       flex:1 0 auto;
       min-width:140px;
       border:1px solid transparent;
@@ -131,21 +132,23 @@
       padding:10px 13px;
       background:transparent;
       color:var(--muted);
-      font:inherit;
       font-size:12.5px;
       font-weight:800;
+      line-height:1.65;
+      text-align:center;
       cursor:pointer;
       transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease;
     }
 
     .tab:hover{
       color:var(--text);
+      text-decoration:none;
       background:rgba(255,255,255,.035);
     }
 
     .tab:active{transform:translateY(1px)}
 
-    .tab[aria-selected="true"]{
+    .tab.active{
       color:#f7fbff;
       border-color:rgba(53,232,255,.24);
       background:linear-gradient(135deg,rgba(53,232,255,.10),rgba(139,92,246,.12));
@@ -281,10 +284,7 @@
     }
 
     @media(max-width:600px){
-      .shell{
-        width:min(calc(100% - 22px),var(--max));
-        padding-top:30px;
-      }
+      .shell{width:min(calc(100% - 22px),var(--max));padding-top:30px}
       .panel{padding:22px 18px}
       .tabs{padding:9px}
       .tab{min-width:126px;padding:9px 11px}
@@ -309,13 +309,13 @@
     </div>
 
     <div class="site-card">
-      <nav class="tabs" role="tablist" aria-label="KuiqKolor privacy and support pages">
-        <button class="tab" id="tab-chrome" role="tab" aria-selected="true" aria-controls="chrome-privacy" data-tab="chrome-privacy">Chrome Privacy</button>
-        <button class="tab" id="tab-mobile" role="tab" aria-selected="false" aria-controls="mobile-privacy" data-tab="mobile-privacy">Mobile Privacy</button>
-        <button class="tab" id="tab-support" role="tab" aria-selected="false" aria-controls="support" data-tab="support">Mobile Support</button>
+      <nav class="tabs" aria-label="KuiqKolor privacy and support pages">
+        <a class="tab active" id="tab-chrome" href="#chrome-privacy" data-tab="chrome-privacy">Chrome Privacy</a>
+        <a class="tab" id="tab-mobile" href="#mobile-privacy" data-tab="mobile-privacy">Mobile Privacy</a>
+        <a class="tab" id="tab-support" href="#support" data-tab="support">Mobile Support</a>
       </nav>
 
-      <article class="panel active" id="chrome-privacy" role="tabpanel" aria-labelledby="tab-chrome">
+      <article class="panel active" id="chrome-privacy" aria-labelledby="tab-chrome">
         <div class="panel-head">
           <h1>Chrome Privacy Policy</h1>
           <p class="effective">Effective date: August 18, 2026</p>
@@ -329,10 +329,7 @@
           </div>
         </div>
 
-        <section>
-          <h2>1. Overview</h2>
-          <p>This Privacy Policy explains what information KuiqKolor stores, how that information is used, and how the extension handles user data.</p>
-        </section>
+        <section><h2>1. Overview</h2><p>This Privacy Policy explains what information KuiqKolor stores, how that information is used, and how the extension handles user data.</p></section>
 
         <section>
           <h2>2. Data stored by KuiqKolor</h2>
@@ -350,62 +347,28 @@
           <div class="callout">This information is stored using <code>chrome.storage.local</code> inside the extension's local Chrome storage.</div>
         </section>
 
-        <section>
-          <h2>3. How stored data is used</h2>
-          <p>KuiqKolor uses locally stored information only to provide its color generation, preset randomization, locking, favorite, and saved-palette features and to preserve your choices between uses of the extension.</p>
-        </section>
+        <section><h2>3. How stored data is used</h2><p>KuiqKolor uses locally stored information only to provide its color generation, preset randomization, locking, favorite, and saved-palette features and to preserve your choices between uses of the extension.</p></section>
 
-        <section>
-          <h2>4. Data collection and transmission</h2>
-          <p>KuiqKolor does not operate a developer-controlled server for user data. The extension does not transmit your saved colors, saved palettes, browsing activity, or extension state to the developer or to third parties.</p>
-          <p>KuiqKolor does not use analytics SDKs, telemetry services, advertising networks, tracking pixels, or behavioral profiling.</p>
-        </section>
+        <section><h2>4. Data collection and transmission</h2><p>KuiqKolor does not operate a developer-controlled server for user data. The extension does not transmit your saved colors, saved palettes, browsing activity, or extension state to the developer or to third parties.</p><p>KuiqKolor does not use analytics SDKs, telemetry services, advertising networks, tracking pixels, or behavioral profiling.</p></section>
 
-        <section>
-          <h2>5. Data sharing and sale</h2>
-          <p>KuiqKolor does not sell, rent, share, or transfer extension user data to advertisers, data brokers, analytics providers, or other third parties.</p>
-        </section>
+        <section><h2>5. Data sharing and sale</h2><p>KuiqKolor does not sell, rent, share, or transfer extension user data to advertisers, data brokers, analytics providers, or other third parties.</p></section>
 
-        <section>
-          <h2>6. Website and browsing access</h2>
-          <p>KuiqKolor does not request persistent host permissions. When you explicitly click the KuiqKolor toolbar icon, Chrome's <code>activeTab</code> permission provides temporary access to that active webpage so KuiqKolor can insert, display, resize, move, minimize, restore, or remove its floating interface.</p>
-          <p>KuiqKolor does not use this temporary access to read, collect, transmit, or monitor webpage content, browsing history, cookies, form data, communications, or other website data. Access is user-initiated and is limited by Chrome's <code>activeTab</code> permission model.</p>
-        </section>
+        <section><h2>6. Website and browsing access</h2><p>KuiqKolor does not request persistent host permissions. When you explicitly click the KuiqKolor toolbar icon, Chrome's <code>activeTab</code> permission provides temporary access to that active webpage so KuiqKolor can insert, display, resize, move, minimize, restore, or remove its floating interface.</p><p>KuiqKolor does not use this temporary access to read, collect, transmit, or monitor webpage content, browsing history, cookies, form data, communications, or other website data. Access is user-initiated and is limited by Chrome's <code>activeTab</code> permission model.</p></section>
 
-        <section>
-          <h2>7. Chrome permissions</h2>
-          <p>KuiqKolor requests <code>storage</code>, <code>activeTab</code>, and <code>scripting</code>. <code>storage</code> preserves the local app state, saved colors, saved palettes, preset state, and floating-panel layout. <code>activeTab</code> provides temporary access only after you invoke KuiqKolor on the current webpage. <code>scripting</code> is used only to inject or toggle KuiqKolor's packaged floating-panel code on that active page.</p>
-          <p>KuiqKolor does not request persistent <code>&lt;all_urls&gt;</code> host permission and does not execute remotely hosted code.</p>
-        </section>
+        <section><h2>7. Chrome permissions</h2><p>KuiqKolor requests <code>storage</code>, <code>activeTab</code>, and <code>scripting</code>. <code>storage</code> preserves the local app state, saved colors, saved palettes, preset state, and floating-panel layout. <code>activeTab</code> provides temporary access only after you invoke KuiqKolor on the current webpage. <code>scripting</code> is used only to inject or toggle KuiqKolor's packaged floating-panel code on that active page.</p><p>KuiqKolor does not request persistent <code>&lt;all_urls&gt;</code> host permission and does not execute remotely hosted code.</p></section>
 
-        <section>
-          <h2>8. Data retention and deletion</h2>
-          <p>Locally saved data remains in Chrome's extension storage until it is changed or removed through KuiqKolor, cleared through browser/extension controls, or removed as part of Chrome's extension-data lifecycle.</p>
-          <p>Individual saved colors and palettes can be removed directly from KuiqKolor's Saved interface.</p>
-        </section>
+        <section><h2>8. Data retention and deletion</h2><p>Locally saved data remains in Chrome's extension storage until it is changed or removed through KuiqKolor, cleared through browser/extension controls, or removed as part of Chrome's extension-data lifecycle.</p><p>Individual saved colors and palettes can be removed directly from KuiqKolor's Saved interface.</p></section>
 
-        <section>
-          <h2>9. Security</h2>
-          <p>Because KuiqKolor's saved extension data is not transmitted to a developer-controlled server, there is no remote user-data database operated by KuiqKolor. Data stored by the extension is subject to Chrome and the user's device/browser security controls.</p>
-        </section>
+        <section><h2>9. Security</h2><p>Because KuiqKolor's saved extension data is not transmitted to a developer-controlled server, there is no remote user-data database operated by KuiqKolor. Data stored by the extension is subject to Chrome and the user's device/browser security controls.</p></section>
 
-        <section>
-          <h2>10. Chrome Web Store Limited Use</h2>
-          <p>KuiqKolor's use of information is limited to providing and maintaining the extension's single purpose: generating, exploring, copying, locking, and locally saving colors and palettes. KuiqKolor does not use extension data for advertising, profiling, unrelated market research, or other unrelated purposes.</p>
-        </section>
+        <section><h2>10. Chrome Web Store Limited Use</h2><p>KuiqKolor's use of information is limited to providing and maintaining the extension's single purpose: generating, exploring, copying, locking, and locally saving colors and palettes. KuiqKolor does not use extension data for advertising, profiling, unrelated market research, or other unrelated purposes.</p></section>
 
-        <section>
-          <h2>11. Changes to this policy</h2>
-          <p>If KuiqKolor's data practices change in a future version, this policy will be updated to accurately describe the new practices and the effective date will be revised.</p>
-        </section>
+        <section><h2>11. Changes to this policy</h2><p>If KuiqKolor's data practices change in a future version, this policy will be updated to accurately describe the new practices and the effective date will be revised.</p></section>
 
-        <section>
-          <h2>12. Contact</h2>
-          <p>For privacy questions about KuiqKolor, contact <a href="mailto:nakOza@live.com">nakOza@live.com</a>.</p>
-        </section>
+        <section><h2>12. Contact</h2><p>For privacy questions about KuiqKolor, contact <a href="mailto:nakOza@live.com">nakOza@live.com</a>.</p></section>
       </article>
 
-      <article class="panel" id="mobile-privacy" role="tabpanel" aria-labelledby="tab-mobile" hidden>
+      <article class="panel" id="mobile-privacy" aria-labelledby="tab-mobile">
         <div class="panel-head">
           <h1>Mobile Privacy Policy</h1>
           <p class="effective">Effective date: August 28, 2026</p>
@@ -419,54 +382,18 @@
           </div>
         </div>
 
-        <section>
-          <h2>Developer</h2>
-          <p><strong>nakOza</strong><br><a href="mailto:nakOza@live.com">nakOza@live.com</a></p>
-        </section>
-
-        <section>
-          <h2>Data Collection</h2>
-          <p>The current version of KuiqKolor Mobile does not collect or transmit personal or sensitive user data to the developer.</p>
-          <p>The app does not include an account system, advertising SDK, analytics SDK, behavioral tracking, remote profile, or cloud-sync service.</p>
-        </section>
-
-        <section>
-          <h2>Local App Data</h2>
-          <p>Saved colors, saved palettes, lock state, preset preferences, and related app settings are stored locally on the device. This local data is not uploaded to a developer-operated server.</p>
-        </section>
-
-        <section>
-          <h2>Clipboard</h2>
-          <p>When a user chooses to copy a HEX color value, KuiqKolor writes that selected value to the operating system clipboard. KuiqKolor does not transmit clipboard contents to the developer.</p>
-        </section>
-
-        <section>
-          <h2>Palette Sharing</h2>
-          <p>When a user chooses Share, KuiqKolor generates a temporary palette image and passes it to the operating system's native share interface. KuiqKolor does not upload that image to a developer-operated server. Any destination selected by the user is governed by that service's own privacy practices.</p>
-        </section>
-
-        <section>
-          <h2>Data Retention</h2>
-          <p>Locally saved colors, palettes, and preferences remain on the device until removed in the app, cleared through device storage controls, or removed when the app is uninstalled. Temporary share images are stored in operating-system temporary storage and may be removed by the operating system.</p>
-        </section>
-
-        <section>
-          <h2>Children</h2>
-          <p>KuiqKolor is a general-purpose color and design utility and is not specifically directed to children.</p>
-        </section>
-
-        <section>
-          <h2>Changes</h2>
-          <p>If KuiqKolor's features or data practices change, this policy will be updated to reflect those changes.</p>
-        </section>
-
-        <section>
-          <h2>Contact</h2>
-          <p><strong>nakOza</strong><br><a href="mailto:nakOza@live.com">nakOza@live.com</a></p>
-        </section>
+        <section><h2>Developer</h2><p><strong>nakOza</strong><br><a href="mailto:nakOza@live.com">nakOza@live.com</a></p></section>
+        <section><h2>Data Collection</h2><p>The current version of KuiqKolor Mobile does not collect or transmit personal or sensitive user data to the developer.</p><p>The app does not include an account system, advertising SDK, analytics SDK, behavioral tracking, remote profile, or cloud-sync service.</p></section>
+        <section><h2>Local App Data</h2><p>Saved colors, saved palettes, lock state, preset preferences, and related app settings are stored locally on the device. This local data is not uploaded to a developer-operated server.</p></section>
+        <section><h2>Clipboard</h2><p>When a user chooses to copy a HEX color value, KuiqKolor writes that selected value to the operating system clipboard. KuiqKolor does not transmit clipboard contents to the developer.</p></section>
+        <section><h2>Palette Sharing</h2><p>When a user chooses Share, KuiqKolor generates a temporary palette image and passes it to the operating system's native share interface. KuiqKolor does not upload that image to a developer-operated server. Any destination selected by the user is governed by that service's own privacy practices.</p></section>
+        <section><h2>Data Retention</h2><p>Locally saved colors, palettes, and preferences remain on the device until removed in the app, cleared through device storage controls, or removed when the app is uninstalled. Temporary share images are stored in operating-system temporary storage and may be removed by the operating system.</p></section>
+        <section><h2>Children</h2><p>KuiqKolor is a general-purpose color and design utility and is not specifically directed to children.</p></section>
+        <section><h2>Changes</h2><p>If KuiqKolor's features or data practices change, this policy will be updated to reflect those changes.</p></section>
+        <section><h2>Contact</h2><p><strong>nakOza</strong><br><a href="mailto:nakOza@live.com">nakOza@live.com</a></p></section>
       </article>
 
-      <article class="panel" id="support" role="tabpanel" aria-labelledby="tab-support" hidden>
+      <article class="panel" id="support" aria-labelledby="tab-support">
         <div class="panel-head">
           <h1>Mobile Support</h1>
           <p class="intro">Official support information for KuiqKolor Mobile.</p>
@@ -475,26 +402,13 @@
         <section>
           <h2>Contact Support</h2>
           <div class="contact-grid">
-            <div class="contact-item">
-              <span class="contact-label">Email</span>
-              <a href="mailto:nakOza@live.com">nakOza@live.com</a>
-            </div>
-            <div class="contact-item">
-              <span class="contact-label">Developer / Publisher</span>
-              <strong>nakOza</strong>
-            </div>
+            <div class="contact-item"><span class="contact-label">Email</span><a href="mailto:nakOza@live.com">nakOza@live.com</a></div>
+            <div class="contact-item"><span class="contact-label">Developer / Publisher</span><strong>nakOza</strong></div>
           </div>
         </section>
 
-        <section>
-          <h2>About KuiqKolor</h2>
-          <p>KuiqKolor generates five-color palettes, includes curated presets, supports color locks, saved colors and palettes, HEX copying, and palette sharing.</p>
-        </section>
-
-        <section>
-          <h2>Privacy</h2>
-          <p><a href="#mobile-privacy" data-tab-link="mobile-privacy">View the KuiqKolor Mobile Privacy Policy</a>.</p>
-        </section>
+        <section><h2>About KuiqKolor</h2><p>KuiqKolor generates five-color palettes, includes curated presets, supports color locks, saved colors and palettes, HEX copying, and palette sharing.</p></section>
+        <section><h2>Privacy</h2><p><a href="#mobile-privacy">View the KuiqKolor Mobile Privacy Policy</a>.</p></section>
       </article>
     </div>
 
@@ -504,57 +418,26 @@
   <script>
     (() => {
       const validTabs = new Set(["chrome-privacy","mobile-privacy","support"]);
-      const tabs = [...document.querySelectorAll("[data-tab]")];
+      const tabs = [...document.querySelectorAll(".tab[data-tab]")];
       const panels = [...document.querySelectorAll(".panel")];
       const brand = document.getElementById("kuiqkolorBrandName");
 
-      function activate(id, updateHash = true) {
-        if (!validTabs.has(id)) id = "chrome-privacy";
+      function activateFromHash() {
+        const requested = location.hash.slice(1);
+        const id = validTabs.has(requested) ? requested : "chrome-privacy";
 
         tabs.forEach(tab => {
           const active = tab.dataset.tab === id;
-          tab.setAttribute("aria-selected", active ? "true" : "false");
-          tab.tabIndex = active ? 0 : -1;
+          tab.classList.toggle("active",active);
+          if (active) tab.setAttribute("aria-current","page");
+          else tab.removeAttribute("aria-current");
         });
 
-        panels.forEach(panel => {
-          const active = panel.id === id;
-          panel.classList.toggle("active", active);
-          panel.hidden = !active;
-        });
-
-        if (updateHash && location.hash !== `#${id}`) {
-          history.replaceState(null,"",`#${id}`);
-        }
+        panels.forEach(panel => panel.classList.toggle("active",panel.id === id));
       }
 
-      function fromHash() {
-        const id = location.hash.slice(1);
-        activate(validTabs.has(id) ? id : "chrome-privacy", false);
-      }
-
-      tabs.forEach((tab,index) => {
-        tab.addEventListener("click",() => activate(tab.dataset.tab));
-        tab.addEventListener("keydown",event => {
-          if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-          event.preventDefault();
-          const direction = event.key === "ArrowRight" ? 1 : -1;
-          const next = (index + direction + tabs.length) % tabs.length;
-          tabs[next].focus();
-          activate(tabs[next].dataset.tab);
-        });
-      });
-
-      document.querySelectorAll("[data-tab-link]").forEach(link => {
-        link.addEventListener("click",event => {
-          event.preventDefault();
-          activate(link.dataset.tabLink);
-          window.scrollTo({top:0,behavior:"smooth"});
-        });
-      });
-
-      window.addEventListener("hashchange",fromHash);
-      fromHash();
+      window.addEventListener("hashchange",activateFromHash);
+      activateFromHash();
 
       if (brand && window.crypto && crypto.getRandomValues) {
         const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
