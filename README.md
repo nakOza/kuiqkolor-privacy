@@ -10,7 +10,7 @@
 
 ## About
 
-This repository contains the standalone static privacy-policy website for **KuiqKolor v1.11.1**.
+This repository contains the standalone static privacy-policy website for **KuiqKolor**.
 
 ## Files
 
