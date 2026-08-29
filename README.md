@@ -1,27 +1,33 @@
 <p align="center">
-  <img src="assets/kuiqkolor-icon.png" alt="KuiqKolor" width="128" height="128">
+  <img src="./kuiqkolor-icon.png" alt="KuiqKolor icon" width="128">
 </p>
-
-<h1 align="center">KuiqKolor Privacy Policy</h1>
 
 <p align="center">
-  Official privacy-policy repository for KuiqKolor.
+  <strong>KuiqKolor Privacy & Support</strong><br>
+  Privacy-policy and support pages for KuiqKolor.
 </p>
 
-## About
+---
 
-This repository contains the standalone static privacy-policy website for **KuiqKolor**.
+<strong>About</strong>
 
-## Files
+This repository hosts the public privacy and support pages used by KuiqKolor across its Chrome extension and mobile app.
 
-- `index.html` — KuiqKolor privacy-policy website
-- `assets/kuiqkolor-icon.png` — Official KuiqKolor icon
+<strong>Repository Files</strong>
 
-## Developer
+| File | Purpose |
+| --- | --- |
+| [`index.html`](./index.html) | Privacy Policy for the KuiqKolor Chrome extension |
+| [`mobile-privacy.html`](./mobile-privacy.html) | Privacy Policy for KuiqKolor Mobile |
+| [`support.html`](./support.html) | Support page for KuiqKolor Mobile |
+| [`kuiqkolor-icon.png`](./kuiqkolor-icon.png) | Official KuiqKolor icon |
+| `README.md` | Repository overview |
 
-**Developer:** nakOza  
-**Support:** nakOza@live.com
+<strong>Developer</strong>
 
-## Copyright
+**nakOza**  
+Support: **nakOza@live.com**
+
+<strong>Copyright</strong>
 
 Copyright © 2026 nakOza. All rights reserved.
